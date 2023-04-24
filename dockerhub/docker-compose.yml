@@ -1,0 +1,26 @@
+---
+version: "3.7"
+services:
+  mirror:
+    image: registry:2
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - "/cache/dockerhub/registry:/var/lib/registry"
+      - "./config/config.yml:/etc/docker/registry/config.yml"
+    environment:
+      TZ: 'Asia/Shanghai'
+      REGISTRY_PROXY_REMOTEURL: 'https://registry-1.docker.io'
+      REGISTRY_PROXY_USERNAME: ''
+      REGISTRY_PROXY_PASSWORD: ''
+  local:
+    image: registry:2
+    restart: unless-stopped
+    ports:
+      - "5100:5000"
+    volumes:
+      - "/cache/dockerhub/registry:/var/lib/registry"
+      - "./config/config.yml:/etc/docker/registry/config.yml"
+    environment:
+      TZ: 'Asia/Shanghai'

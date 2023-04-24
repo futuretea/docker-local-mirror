@@ -1,0 +1,22 @@
+---
+version: "3"
+
+includes:
+  precommit: .taskfiles/PrecommitTasks.yml
+
+tasks:
+  up:
+    desc: Start local mirror of Docker Hub
+    dir: dockerhub
+    cmds:
+      - docker-compose up -d
+  down:
+    desc: Stop local mirror of Docker Hub
+    dir: dockerhub
+    cmds:
+      - docker-compose down
+  clean:
+    desc: Clean head images in local mirror
+    dir: dockerhub
+    cmds:
+      - ./clean.sh head
