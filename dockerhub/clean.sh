@@ -22,7 +22,7 @@ local_host="127.0.0.1:5100"
 
 mirror_container_name="dockerhub_mirror_1"
 local_container_name="dockerhub_local_1"
-local_store_path="/cache/dockerhub"
+local_store_path="/data/dockerhub"
 
 docker stop "${mirror_container_name}"
 

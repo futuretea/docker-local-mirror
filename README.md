@@ -10,8 +10,8 @@
 1. Prepare a directory for storing the mirror data
 
 ```bash
-sudo mkdir -p /cache/dockerhub
-sudo chown -R ${USER} /cache/dockerhub
+sudo mkdir -p /data/dockerhub
+sudo chown -R ${USER} /data/dockerhub
 ```
 
 2. Run the docker-compose

@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - "/cache/dockerhub/registry:/var/lib/registry"
+      - "/data/dockerhub/registry:/var/lib/registry"
       - "./config/config.yml:/etc/docker/registry/config.yml"
     environment:
       TZ: 'Asia/Shanghai'
@@ -20,7 +20,7 @@ services:
     ports:
       - "5100:5000"
     volumes:
-      - "/cache/dockerhub/registry:/var/lib/registry"
+      - "/data/dockerhub/registry:/var/lib/registry"
       - "./config/config.yml:/etc/docker/registry/config.yml"
     environment:
       TZ: 'Asia/Shanghai'
